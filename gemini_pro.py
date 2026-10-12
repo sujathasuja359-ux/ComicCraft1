@@ -79,6 +79,7 @@ Character: "..."
         return story
 
     except Exception as e:
+        
 
         print("\nError while generating comic story:")
         print(e)

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ComicCraft - AI Comic Story Creator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 70%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎨 ComicCraft</h1>
+
+    <p>AI Comic Story Creator using Gemini Models</p>
+
+    <form action="/generate" method="post">
+
+        <label for="story_prompt">
+            Story Prompt
+        </label>
+
+        <textarea
+            id="story_prompt"
+            name="story_prompt"
+            placeholder="Enter your comic story idea..."
+            required
+        ></textarea>
+
+
+        <label for="character_name">
+            Main Character Name
+        </label>
+
+        <input
+            type="text"
+            id="character_name"
+            name="character_name"
+            placeholder="Example: Arjun"
+            required
+        >
+
+
+        <label for="setting">
+            Setting
+        </label>
+
+        <input
+            type="text"
+            id="setting"
+            name="setting"
+            placeholder="Example: A colorful city"
+            required
+        >
+
+
+        <label for="tone">
+            Tone
+        </label>
+
+        <select
+            id="tone"
+            name="tone"
+            required
+        >
+            <option value="Funny">Funny</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Emotional">Emotional</option>
+            <option value="Mysterious">Mysterious</option>
+            <option value="Friendly">Friendly</option>
+        </select>
+
+
+        <label for="art_style">
+            Art Style
+        </label>
+
+        <select
+            id="art_style"
+            name="art_style"
+            required
+        >
+            <option value="Children's Comic">Children's Comic</option>
+            <option value="Cartoon">Cartoon</option>
+            <option value="Anime">Anime</option>
+            <option value="Colorful Comic">Colorful Comic</option>
+        </select>
+
+
+        <button type="submit">
+            🚀 Generate Comic
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

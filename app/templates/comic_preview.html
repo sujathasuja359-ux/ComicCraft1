@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ComicCraft - Comic Preview</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .comic-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .panel {
+            background: white;
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .panel h2 {
+            margin-top: 0;
+        }
+
+        .panel img {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+        }
+
+        .story {
+            white-space: pre-line;
+            line-height: 1.6;
+        }
+
+        .download {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .download a {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="comic-container">
+
+    <h1>🎨 Your Comic is Ready!</h1>
+
+    {% for panel in layout %}
+
+    <div class="panel">
+
+        <h2>Panel {{ panel.panel }}</h2>
+
+        {% if panel.image %}
+        <img
+            src="/{{ panel.image }}"
+            alt="Comic Panel {{ panel.panel }}"
+        >
+        {% endif %}
+
+        <div class="story">
+            {{ panel.text }}
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+    <div class="download">
+
+        <a
+            href="/{{ pdf_path }}"
+            target="_blank"
+        >
+            📄 Open / Download Comic PDF
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
